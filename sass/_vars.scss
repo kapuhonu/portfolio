@@ -1,0 +1,13 @@
+$remio-blue: #1d3f4f;
+$remio-lightblue: #d1d8dc;
+$remio-darkblue: #071b24;
+$remio-black: #353535;
+$remio-white: #ffffff;
+
+$susy: (
+	columns: 12,
+	gutters: (1),
+	math: fluid,
+	output: float,
+	gutter-position: inside
+);

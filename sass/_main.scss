@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: "Open Sans";
+	height: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+
+h2 {
+	font-family: montserratbold;
+	text-transform: uppercase;
+	text-align: center;
+	color: $remio-black;
+	letter-spacing: 1px;
+}
+
+label {
+	display: block;
+	color: $remio-white;
+	line-height: 1.5em;
+}
+
+input, textarea {
+	display: block;
+	border: 1px solid #333;
+	width: 100%;
+	font-size: 16px;
+	font-family: "Open Sans";
+	margin-bottom: 1em;
+	-webkit-appearance: none;
+	padding: .5em;
+	box-sizing: border-box;
+}
+
+button, .button {
+	border: 1px solid $remio-white;
+	padding: 1em;
+	color: $remio-white;
+	text-transform: uppercase;
+	font-family: montserratlight;
+	text-decoration: none;
+	text-align: center;
+	width: 8em;
+	margin: 0 auto;
+	display: block;
+	transition: border 400ms, color 400ms;
+	background-color: transparent;
+}
+
+button:hover, .button:hover {
+	border: 1px solid $remio-lightblue;
+	color: $remio-lightblue;
+	transition: border 400ms, color 400ms;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+#wrapper {
+	min-height: 100%;
+}
+
+section {
+	padding: 4em 0;
+}
+
+section:first-child {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.container {
+	@include container(75em);
+	margin: 0 1em;
+}
+
+#header .container {
+	margin: 0;
+}
+
+#footerwrapper {
+	height: 3.25em;
+}
+
+.l-3-cols .column {
+	@include span(4 of 12);
+}
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+
+/* Branding */
+
+.logo {
+	text-indent: -9999px;
+	background: url(../img/logo.png) no-repeat;
+	height: 147px;
+	width: 147px;
+	display: block;
+	margin: 4em auto 0;
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'League Gothic';
+	font-size: 8em;
+	margin: 0;
+	color: #fff;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	line-height: 1em;
+}
+
+.intro {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'League Gothic';
+	font-size: 8em;
+	margin: 0;
+	color: #fff;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	line-height: 1em;
+}
+
+.tagline {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'League Gothic';
+	font-size: 3em;
+	margin: 0;
+	color: #fff;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	line-height: 1em;
+}
+
+#about h2 {
+	@include span(6 of 12);
+	@include pre(3);
+	@include post(3);
+	font-family: 'PT Sans';
+	text-transform: none;
+	font-weight: normal;
+}
+
+/* Header */
+
+#header {
+	background: url(../img/bg.png) no-repeat center center fixed;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  height: 100%;
+	  width: 100%;
+	  border-top: 5px solid #ed992c;
+}
+
+#header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Clients */
+
+.clients {
+	padding: 4em 0;
+}
+
+.clients ul {
+	margin: 4em 0 0 0;
+	padding: 0;
+}
+
+.clients li {
+	list-style: none;
+}
+
+@media only screen and (min-width: 30em) {
+
+	.clients {
+		@include gutter(12);
+	}
+
+    .clients li {
+		@include gallery(6 of 12);
+		margin-bottom: gutter(12);
+	}
+
+}
+
+.clients img {
+	transition: box-shadow 400ms;
+}
+
+.clients img:hover {
+	box-shadow: 2px 2px 2px #eee;
+	transition: box-shadow 400ms;
+}
+
+/* Team */
+
+.team {
+}
+
+.team ul {
+	padding: 0;
+	margin-top: 4em;
+}
+
+.team li {
+	list-style: none;
+	text-align: center;
+	margin-bottom: gutter(12);
+}
+
+@media only screen and (min-width: 30em) {
+    .team li {
+		@include span(4 of 12);
+	}
+}
+
+
+/* Footer */
+
+#subfooter {
+	min-height: 2.5em;
+	background-color: #000;
+	border-bottom: 5px solid #ed992c;
+	color: $remio-white;
+}
+
+#subfooter p {
+	margin: 0;
+	padding: 1.5em;
+	font-family: montserratlight;
+	font-size: .75em;
+	text-transform: uppercase;
+}
+
+/************************************************
+    Contact
+************************************************/
+
+.contact {
+	background-color: #333;
+	color: #fff;
+	padding: 4em 0;
+}
+
+@media only screen and (min-width: 30em) {
+
+	.contact form {
+		@include pre(3);
+		@include post(3);
+		@include span(6 of 12);
+	}
+
+}
+
+.contact a {
+	text-decoration: none;
+	color: $remio-white;
+	font-size: .9em;
+}
+
+.contact h2 {
+	color: $remio-white;
+}
+
+.contact .fa {
+	margin-right: 1em;
+}
+
+#cd-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #222;
+	color: #fff;
+	display: block;
+	font-family: 'PT Sans';
+	overflow: hidden;
+	height: 67px;
+	width: 67px;
+	transition: all .4s cubic-bezier(.1,.7,.3,1);
+
+	nav {
+		background-color: #222;
+	}
+
+	nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	li {
+		padding: .5em 0;
+		width: 100%;
+	}
+
+	a:link, a:visited {
+		color: #fff;
+		text-decoration: none;
+		height: 35px;
+		width: 35px;
+		padding: 1em;
+	}
+
+	a:hover {
+		background-color: #999;
+	}
+
+	.cd-nav-trigger {
+		display: block;
+		color: #fff;
+	}
+
+	#cd-main-nav {
+		margin-top: 2em;
+		/*display: none;*/
+		width: 0em;
+		transition: all .4s cubic-bezier(.1,.7,.3,1);
+	}
+
+	#cd-main-nav.expanded {
+		display: block;
+		transition: all .4s cubic-bezier(.1,.7,.3,1);
+	}
+}
+
+#cd-nav.expanded {
+	transition: all .4s cubic-bezier(.1,.7,.3,1);
+	width: 10em;
+	height: 18em;
+}
