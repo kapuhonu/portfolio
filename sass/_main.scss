@@ -306,6 +306,7 @@ h2 {
 	height: 51px;
 	width: 51px;
 	transition: all .4s cubic-bezier(.1,.7,.3,1);
+	opacity: .5;
 
 	nav {
 		background-color: #222;
@@ -329,10 +330,12 @@ h2 {
 		height: 35px;
 		width: 35px;
 		padding: .5em;
+		transition: all .4s cubic-bezier(.1,.7,.3,1);
 	}
 
 	a:hover {
-		background-color: #999;
+		background-color: #444;
+		transition: all .4s cubic-bezier(.1,.7,.3,1);
 	}
 
 	.cd-nav-trigger {
@@ -340,6 +343,10 @@ h2 {
 		color: #fff;
 		text-indent: -9999px;
 		background: url('../img/menu.svg') no-repeat center;
+	}
+
+	.cd-nav-trigger:hover {
+		background-color: #000;
 	}
 
 	#cd-main-nav {
@@ -355,8 +362,13 @@ h2 {
 	}
 }
 
+#cd-nav:hover {
+	opacity: 1;
+}
+
 #cd-nav.expanded {
 	transition: all .4s cubic-bezier(.1,.7,.3,1);
 	width: 10em;
 	height: 20em;
+	opacity: 1;
 }
