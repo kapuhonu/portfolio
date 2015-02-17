@@ -19,3 +19,7 @@
     Jekyll, SASS
     Node, Gulp
     BrowserSync
+
+# Licenses
+
+    SVG Hamburger Icon -- Timothy Miller -- https://www.iconfinder.com/icons/134216/hamburger_lines_menu_icon
