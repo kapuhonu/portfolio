@@ -103,11 +103,12 @@ section:first-child {
 
 .logo {
 	text-indent: -9999px;
-	background: url(../img/logo.png) no-repeat;
+	background: url(../img/logo.svg) no-repeat;
 	height: 147px;
 	width: 147px;
 	display: block;
 	margin: 4em auto 0;
+	background-size: 147px 147px;
 }
 
 h1 {
