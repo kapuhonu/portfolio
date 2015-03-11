@@ -22,4 +22,5 @@
 
 # Licenses
 
-    SVG Hamburger Icon -- Timothy Miller -- https://www.iconfinder.com/icons/134216/hamburger_lines_menu_icon
+    Hamburger Icon -- Timothy Miller -- https://www.iconfinder.com/icons/134216/hamburger_lines_menu_icon
+    Close Icon -- Icon Jungle -- https://www.iconfinder.com/icons/296812/close_cross_delete_icon#size=128
