@@ -8,13 +8,24 @@ html {
 
 body {
 	margin: 0;
-	font-family: ptsans;
+	font-family: 'Open Sans';
 	height: 100%;
 	background-color: #f6f6f6;
+	color: #333;
+	font-size: map-get($fontsize, base);
+	line-height: 1.5rem;
 }
 
 img {
 	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 }
 
 h2 {
@@ -34,12 +45,16 @@ input, textarea {
 	display: block;
 	border: 1px solid #333;
 	width: 100%;
-	font-size: 16px;
-	font-family: ptsans;
+	font-size: map-get($fontsize, base);
+	font-family: 'Open Sans';
 	margin-bottom: 1em;
 	-webkit-appearance: none;
 	padding: .5em;
 	box-sizing: border-box;
+}
+
+textarea {
+	height: 16em;
 }
 
 button, .button {
@@ -49,11 +64,20 @@ button, .button {
 	text-transform: uppercase;
 	text-decoration: none;
 	text-align: center;
-	width: 8em;
+	width: 100%;
 	margin: 0 auto;
 	display: block;
 	transition: border 400ms, color 400ms;
 	background-color: transparent;
+	margin: 1em 0;
+}
+
+@media only screen and (min-width: 30em) {
+
+	button {
+		width: 8em;
+	}
+
 }
 
 button:hover, .button:hover {
@@ -72,6 +96,16 @@ button:hover, .button:hover {
 
 section {
 	padding: 4em 0;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+@media only screen and (min-width: 30em) {
+
+	section {
+		max-height: 1200px;
+	}
+
 }
 
 section:first-child {
@@ -81,7 +115,7 @@ section:first-child {
 
 .container {
 	@include container(75em);
-	margin: 0 1em;
+	margin: 0 auto;
 }
 
 #header .container {
@@ -115,8 +149,8 @@ section:first-child {
 h1 {
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'leaguegothic';
-	font-size: 8em;
+	font-family: 'Bebas';
+	font-size: map-get($fontsize, xxlarge);
 	margin: 0;
 	color: #fff;
 	-webkit-margin-before: 0;
@@ -127,42 +161,94 @@ h1 {
 h2 {
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'leaguegothic';
-	font-size: 2.5em;
+	font-family: 'Bebas';
+	font-size: map-get($fontsize, large);
+	line-height: 2rem;
 }
 
 .intro {
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'leaguegothic';
-	font-size: 8em;
+	font-family: 'Bebas';
+	font-size: map-get($fontsize, xxlarge);
 	margin: 0;
 	color: #fff;
 	-webkit-margin-before: 0;
 	-webkit-margin-after: 0;
 	line-height: 1em;
+}
+
+@media only screen and (min-width: 30em) {
+
+	h1, .intro {
+		font-size: 5.996em;
+	}
+
+	h2, .tagline {
+		font-size: map-get($fontsize, xlarge);
+	}
+
 }
 
 .tagline {
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'leaguegothic';
-	font-size: 3em;
-	margin: 0;
+	font-family: 'Bebas';
+	font-size: map-get($fontsize, large);
+	margin: 1em 0 0;
 	color: #fff;
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
 	line-height: 1em;
 }
 
+#about {
+	color: #333;
+	background: url(../img/stardust.png) repeat;
+	color: #fff;
+
+}
+
+#about h2, #about .main, #about aside {
+	@include span(12 of 12);
+}
+
 #about h2 {
-	@include span(6 of 12);
-	@include pre(3);
-	@include post(3);
-	font-family: 'ptsans';
+	font-family: 'Open Sans';
 	text-transform: none;
 	font-weight: normal;
-	font-size: 2em;
+	color: #fff;
+	line-height: 2.5rem;
+	text-align: center;
+}
+
+#about .main {
+	font-family: 'Open Sans';
+	font-size: map-get($fontsize, base);
+}
+
+#about aside {
+	font-size: map-get($fontsize, small);
+	line-height: 1rem;
+	margin-top: 1.75em;
+}
+
+@media only screen and (min-width: 30em) {
+
+	#about h2 {
+		@include span(6 of 12);
+		@include pre(3);
+		@include post(3);
+	}
+
+	#about .main {
+		@include span(6 of 12);
+		@include post(2);
+	}
+
+	#about aside {
+		@include span(2 of 12);
+		@include pre(1);
+		text-align: right;
+	}
 }
 
 /* Header */
@@ -175,7 +261,14 @@ h2 {
 	  background-size: cover;
 	  height: 100%;
 	  width: 100%;
-	  border-top: 5px solid #ed992c;
+	  max-height: 1200px;
+	  box-shadow: 0px 1200px rgba(237, 153, 44, 0.7) inset;
+}
+
+.flexbox #header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 #header nav ul {
@@ -183,80 +276,160 @@ h2 {
 	padding: 0;
 }
 
+#header header {
+	margin-top: -4em;
+}
+
+/* Details */
+
+#details {
+
+	li {
+		@include gallery(4 of 12);
+		list-style: none;
+	}
+}
+
 
 /* Clients */
+
+#portfolio {
+	min-height: initial;
+}
 
 .clients {
 	padding: 4em 0;
 }
 
 .clients ul {
-	margin: 4em 0 0 0;
-	padding: 0;
+	@include span(12 of 12);
 }
 
 .clients li {
 	list-style: none;
 }
 
-@media only screen and (min-width: 30em) {
+@media only screen and (max-width: 30em) {
 
-	.clients {
-		@include gutter(12);
-	}
-
-    .clients li {
+	.clients li {
 		@include gallery(6 of 12);
 		margin-bottom: gutter(12);
 	}
 
 }
 
-.clients img {
-	transition: box-shadow 400ms;
-}
-
-.clients img:hover {
-	box-shadow: 2px 2px 2px #eee;
-	transition: box-shadow 400ms;
-}
-
-/* Team */
-
-.team {
-}
-
-.team ul {
-	padding: 0;
-	margin-top: 4em;
-}
-
-.team li {
-	list-style: none;
-	text-align: center;
-	margin-bottom: gutter(12);
-}
-
 @media only screen and (min-width: 30em) {
-    .team li {
-		@include span(4 of 12);
+
+	.clients ul {
+		@include gutter(12);
+	}
+
+    .clients li {
+		@include gallery(2 of 12);
+		margin-bottom: gutter(12);
+	}
+
+}
+
+.clients img {
+	background-color: #fff;
+	border: 1px solid #ededed;
+}
+
+/* Case study */
+
+#case {
+	background: url('../img/gplaypattern.png') repeat;
+	box-shadow: 0px 1200px rgba(179, 206, 216, 0.5) inset;
+	padding: 8em 0;
+	box-sizing: border-box;
+}
+
+.case-study {
+	.case-info, .case-image {
+		@include span(12 of 12);
 	}
 }
 
+@media only screen and (min-width: 30em) {
+
+	.flexbox .case-study {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.case-study.left {
+
+		h2 { text-align: right; }
+
+		.case-info {
+			text-align: right;
+			@include span(4 of 12);
+			@include pre(2);
+		}
+
+		.case-image {
+			@include span(4 of 12 last);
+			@include post(2);
+			margin-top: 1.5em;
+		}
+
+		button {
+			float: right;
+		}
+
+	}
+
+	.case-study.right {
+
+		h2 { text-align: left; }
+
+		.case-info {
+			text-align: left;
+			@include span(4 of 12 last);
+			@include post(2);
+		}
+
+		.case-image {
+			@include span(4 of 12);
+			@include pre(2);
+			margin-top: 1.5em;
+		}
+
+		button {
+			float: left;
+		}
+
+	}
+
+} // @media: case studies
+
+#pythio {
+	background: url('../img/connect.png') repeat;
+	box-shadow: 0px 1200px rgba(44, 22, 43, 0.8) inset;
+	padding: 8em 0;
+	box-sizing: border-box;
+	color: #fff;
+
+	h2 {
+		color: #fff;
+	}
+}
 
 /* Footer */
 
 #subfooter {
 	min-height: 2.5em;
 	background-color: #000;
-	border-bottom: 5px solid #ed992c;
+	// border-bottom: 5px solid #ed992c;
 	color: $remio-white;
 }
 
 #subfooter p {
 	margin: 0;
 	padding: 1.5em;
-	font-family: ptsans;
+	font-family: 'Open Sans';
 	font-size: .75em;
 	text-transform: uppercase;
 }
@@ -266,9 +439,21 @@ h2 {
 ************************************************/
 
 .contact {
-	background-color: #333;
+	background: url(../img/4FD7DE07B0min.jpg) no-repeat center center fixed;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  min-height: 100%;
+	  width: 100%;
+	box-shadow: 0px 1200px rgba(0, 0, 0, 0.5) inset;
 	color: #fff;
 	padding: 4em 0;
+	box-sizing: border-box;
+}
+
+.contact form {
+	@include span(12 of 12);
 }
 
 @media only screen and (min-width: 30em) {
@@ -302,12 +487,13 @@ h2 {
 	background-color: #222;
 	color: #fff;
 	display: block;
-	font-family: 'ptsans';
+	font-family: 'Open Sans';
 	overflow: hidden;
 	height: 51px;
 	width: 51px;
 	transition: all .4s cubic-bezier(.1,.7,.3,1);
 	opacity: .5;
+	z-index: 9999;
 
 	nav {
 		background-color: #222;
@@ -359,7 +545,6 @@ h2 {
 	#cd-main-nav {
 		margin-top: 2em;
 		/*display: none;*/
-		width: 0em;
 		transition: all .4s cubic-bezier(.1,.7,.3,1);
 	}
 
@@ -375,7 +560,7 @@ h2 {
 
 #cd-nav.expanded {
 	transition: all .4s cubic-bezier(.1,.7,.3,1);
-	width: 10em;
+	width: 12em;
 	height: 20em;
 	opacity: 1;
 }

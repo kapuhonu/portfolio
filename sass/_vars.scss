@@ -11,3 +11,48 @@ $susy: (
 	output: float,
 	gutter-position: inside
 );
+
+// Font Scale: Augmented Fourth
+
+$fontsize: (
+	xxxlarge: 3.998em,
+	xxlarge: 2.827em,
+	xlarge: 1.999em,
+	large: 1.414em,
+	base: 1em,
+	small: 0.667em,
+	xsmall: 0.444em,
+	xxsmall: 0.296em
+);
+
+// Typefaces
+
+$bodytype: (
+  font-family: 'Open Sans, sans-serif',
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.66
+);
+
+$headingtype: (
+  font-family: 'Bebas, Helvetica, sans-serif',
+  regular: 400,
+  bold: 700,
+  cap-height: 0.65
+);
+
+$monospacetype: (
+  font-family: 'Menlo, monospace',
+  regular: 400,
+  cap-height: 0.68
+);
+
+
+// Colors
+$headingColour: #2E2E2E;
+$bodyColour: #494949;
+$linkColour: #0E58F5;
+$hoverColour: #0B348B;
+$captionColour: #BDC8CC;
+$white: #FFFFFF;
