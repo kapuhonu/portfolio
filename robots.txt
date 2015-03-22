@@ -1,4 +1,6 @@
 # robotstxt.org/
 
 User-agent: *
-Disallow: /
+Disallow: /invoices
+Disallow: /themes
+Disallow: /phpmyadmin

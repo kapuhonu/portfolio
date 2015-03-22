@@ -7,6 +7,7 @@
     Chuck Liddell   -- Technical Architect  --
     Nathan Phillips -- Senior Web Developer -- @natesologuitar
     Matt Chinnock   -- Senior Web Developer -- @mattchinnock
+    Scott Ferguson  -- Business Manager     --
 
 # THANKS
 
