@@ -65,11 +65,10 @@ button, .button {
 	text-decoration: none;
 	text-align: center;
 	width: 100%;
-	margin: 0 auto;
 	display: block;
 	transition: border 400ms, color 400ms;
 	background-color: transparent;
-	margin: 1em 0;
+	margin: 1em auto;
 }
 
 @media only screen and (min-width: 30em) {
@@ -104,7 +103,7 @@ section {
 
 	section {
 		max-height: 1200px;
-		height: 100%;
+		// height: 100%;
 	}
 
 }
