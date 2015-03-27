@@ -1,12 +1,11 @@
 # Dev: To Do
 
 * Minification
-* SF content
-* Pythio content
 * Case study page
 * General blog page
-* Training revelations logo
-* GP compressed logo
-* Site map
+* Site map : http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/
 * Mobile menu could be made fancier (and disable smoothscroll)
 * Form submitted page
+* Syntax highlighting
+* Autoprefixer
+* Extensionless permalinks: http://jekyllrb.com/docs/permalinks/

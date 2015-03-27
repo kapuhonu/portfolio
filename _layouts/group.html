@@ -24,24 +24,48 @@
         <meta name="msapplication-TileImage" content="/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!-- <div id="wrapper"> -->
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="header" class="clearfix">
+        <div id="header" class="clearfix bg-{{page.background}} bg-{{page.bgtype}} {% if page.image %} bg-{{page.image}} {% endif %}">
             <div class="container">
                 <header>
-                    <a href="/" class="logo-wrapper"><span class="logo wow fadeInDown" data-wow-duration="1s">Kapuhonu</span></a>
-                    <p class="intro">We are</p>
-                    <h1>Kapuhonu</h1>
-                    <p class="tagline">Clever code for a complex world</p>
+                    <span class="logo wow fadeInDown" data-wow-duration="1s">Kapuhonu</span>
+                    <h1>{{page.title}}</h1>
+                    <p class="tagline">{{page.subtitle}}</p>
                     {% include navigation.html %}
                 </header>
             </div>
         </div>
+        <section class="main">
+            <div class="container">
+                <div class="content">
+                    {{ content }}
+                </div>
+            </div>
+        </section>
+        <div id="footerwrapper">
+            <div id="subfooter">
+                <div class="container">
+                    <p>Copyright &copy; Kapuhonu 2015</p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/wow.min.js"></script>
+        <script src="/js/main.js"></script>
+
+        {% include analytics.html %}
+    </body>
+</html>
