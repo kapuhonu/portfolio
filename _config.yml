@@ -3,7 +3,7 @@ markdown: redcarpet
 highlighter: pygments
 permalink: none
 
-destination: build
+destination: _build
 exclude: [sass, gulp, node_modules, remio.sublime-project, README.md, gulpfile.js]
 
 url: http://www.kapuhonu.com
