@@ -544,7 +544,7 @@ h2 {
 	transition: background-color .5s;
 }
 
-.cd-nav-trigger:hover {
+.cd-nav-trigger:hover, .cd-nav-trigger:focus {
 	background-color: #000;
 	transition: background-color .5s;
 }
