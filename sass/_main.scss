@@ -540,10 +540,12 @@ h2 {
 	left: 0;
 	width: 51px;
 	height: 51px;
+	transition: background-color .5s;
 }
 
 .cd-nav-trigger:hover {
 	background-color: #000;
+	transition: background-color .5s;
 }
 
 #cd-nav.expanded .cd-nav-trigger {
