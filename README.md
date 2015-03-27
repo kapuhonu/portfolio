@@ -16,7 +16,6 @@ To begin development, simply run `gulp` in the project folder.
 
 * Fix navigation on mobile
 * General page typography
-* Autoprefixer
 * Minification
 * Syntax highlighting
 * Extensionless permalinks: http://jekyllrb.com/docs/permalinks/
