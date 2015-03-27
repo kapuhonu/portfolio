@@ -1,4 +1,4 @@
-var dest = "./build";
+var dest = "./_build";
 var src = '.';
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
     dest: dest + "/img"
   },
   markup: {
-    src: ["./**/*.md", "./**/*.html", "./**/*.xml", "./**/*.txt", "!./node_modules/**/*", "!./build/**/*"],
+    src: ["./**/*.md", "./**/*.html", "./**/*.xml", "./**/*.txt", "!./node_modules/**/*", "!./_build/**/*"],
     dest: dest
   },
   browserify: {
