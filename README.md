@@ -14,7 +14,6 @@ To begin development, simply run `gulp` in the project folder.
 
 ## Development Roadmap
 
-* Fix that damn height bug again
 * Fix navigation on mobile
 * General page typography
 * Minification

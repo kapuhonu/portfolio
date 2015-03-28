@@ -13,11 +13,23 @@ body {
 	background-color: #f6f6f6;
 	color: #333;
 	font-size: map-get($fontsize, base);
-	line-height: 1.5rem;
+	line-height: 2rem;
 }
 
-img {
-	max-width: 100%;
+a {
+	-webkit-transition: color .1s, background-color .1s;
+	-moz-transition: color .1s, background-color .1s;
+	-ms-transition: color .1s, background-color .1s;
+	-o-transition: color .1s, background-color .1s;
+	transition: color .1s, background-color .1s;
+
+	color: $linkColour;
+	text-decoration: none;
+
+	&:hover, &:active, &:focus {
+		color: $hoverColour;
+		text-decoration: none;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,18 +38,58 @@ h1, h2, h3, h4, h5, h6 {
   -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  text-align: left;
+  color: $black;
+  @include headingtype;
+}
+
+h1 {
+	font-size: map-get($fontsize, xxlarge);
 }
 
 h2 {
 	text-transform: uppercase;
-	text-align: center;
-	color: $remio-black;
+	color: $black;
 	letter-spacing: 1px;
+	font-size: map-get($fontsize, xlarge);
+}
+
+h3 {
+	font-size: map-get($fontsize, large);
+}
+
+h4 {
+	font-size: map-get($fontsize, base);
+}
+
+h5 {
+	font-size: map-get($fontsize, small);
+}
+
+h6 {
+	font-size: map-get($fontsize, xsmall);
+}
+
+hr {
+	background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to($captionColour));
+	background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
+	background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
+	background-position: 0 50%;
+	background-repeat: repeat-x;
+	background-size: 100% 0.15rem;
+	border: 0;
+	margin: 0;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
+}
+
+img {
+	max-width: 100%;
 }
 
 label {
 	display: block;
-	color: $remio-white;
+	color: $black;
 	line-height: 1.5em;
 }
 
@@ -53,8 +105,47 @@ input, textarea {
 	box-sizing: border-box;
 }
 
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid $bodyColour;
+	padding: 1em;
+}
+
 textarea {
 	height: 16em;
+}
+
+p a, li a {
+	background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+	background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+	background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+	background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+	background-position: 0 93%;
+	background-repeat: repeat-x;
+	background-size: 100% 0.15rem;
+	// text-shadow: 0.1rem 0 $backgroundColour,0.15rem 0 $backgroundColour,-0.1rem 0 $backgroundColour,-0.15rem 0 $backgroundColour;
+	text-decoration: none;
+
+	&:hover, &:active, &:focus {
+		background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+		background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+		background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+		background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+		text-decoration: none;
+	}
+}
+
+p {
+	-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	-moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	-ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	-o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+	line-height: 2rem;
 }
 
 button, .button {
@@ -102,13 +193,17 @@ button:hover, .button:hover {
 
 section {
 	padding: 4em 0;
+}
+
+.home section {
+	padding: 4em 0;
 	box-sizing: border-box;
 	min-height: 100%;
 }
 
 @media only screen and (min-width: 75em) {
 
-	section {
+	.home section {
 		max-height: 1200px;
 		// height: 100%;
 	}
@@ -155,60 +250,6 @@ section:first-child {
 	display: block;
 	margin: 4em auto 2em;
 	background-size: 147px 147px;
-}
-
-h1 {
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Bebas';
-	font-size: map-get($fontsize, xxlarge);
-	margin: 0;
-	color: #fff;
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-	line-height: 1em;
-}
-
-h2 {
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Bebas';
-	font-size: map-get($fontsize, large);
-	line-height: 2rem;
-}
-
-.intro {
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Bebas';
-	font-size: map-get($fontsize, xxlarge);
-	margin: 0;
-	color: #fff;
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-	line-height: 1em;
-}
-
-@media only screen and (min-width: 30em) {
-
-	h1, .intro {
-		font-size: 5.996em;
-	}
-
-	h2, .tagline {
-		font-size: map-get($fontsize, xlarge);
-	}
-
-}
-
-.tagline {
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Bebas';
-	font-size: map-get($fontsize, large);
-	margin: 1em 0 0;
-	color: #fff;
-	line-height: 1em;
 }
 
 #about {
@@ -274,6 +315,60 @@ h2 {
 	  width: 100%;
 	  max-height: 1200px;
 	  box-shadow: 0px 2000px rgba(237, 153, 44, 0.7) inset;
+
+	h1 {
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'Bebas';
+		font-size: map-get($fontsize, xxlarge);
+		margin: 0;
+		color: #fff;
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		line-height: 1em;
+	}
+
+	h2 {
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'Bebas';
+		font-size: map-get($fontsize, large);
+		line-height: 2rem;
+	}
+
+	.intro {
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'Bebas';
+		font-size: map-get($fontsize, xxlarge);
+		margin: 0;
+		color: #fff;
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		line-height: 1em;
+	}
+
+	@media only screen and (min-width: 30em) {
+
+		h1, .intro {
+			font-size: 5.996em;
+		}
+
+		h2, .tagline {
+			font-size: map-get($fontsize, xlarge);
+		}
+
+	}
+
+	.tagline {
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'Bebas';
+		font-size: map-get($fontsize, large);
+		margin: 1em 0 0;
+		color: #fff;
+		line-height: 1em;
+	}
 }
 
 #header.bg-purple {
@@ -313,6 +408,10 @@ h2 {
 
 #header header {
 	margin-top: -4em;
+}
+
+section.main {
+	max-height: none;
 }
 
 .content {
@@ -499,6 +598,10 @@ h2 {
 	color: #fff;
 	padding: 4em 0;
 	box-sizing: border-box;
+
+	label {
+		color: $white;
+	}
 }
 
 .contact form {
@@ -523,6 +626,7 @@ h2 {
 
 .contact h2 {
 	color: $remio-white;
+	text-align: center;
 }
 
 .contact .fa {
