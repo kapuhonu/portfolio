@@ -622,6 +622,7 @@ section.main {
 	text-decoration: none;
 	color: $remio-white;
 	font-size: .9em;
+	background-image: none;
 }
 
 .contact h2 {
@@ -726,6 +727,10 @@ section.main {
 		width: auto;
 	}
 
+	.social p {
+		margin: 0;
+	}
+
 	a:link, a:visited {
 		color: #fff;
 		text-decoration: none;
@@ -733,6 +738,7 @@ section.main {
 		width: 35px;
 		padding: .5em;
 		transition: background-color .4s cubic-bezier(.1,.7,.3,1);
+		background-image: none;
 	}
 
 	a:hover {
