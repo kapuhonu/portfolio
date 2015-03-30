@@ -7,15 +7,35 @@ Our portfolio site runs on Jekyll, with development aided by Gulp.
 
 ## Usage
 
-`gem install jekyll`
-Run `npm install` in the project folder.
+#### 1. Install Jekyll
 
-To begin development, simply run `gulp` in the project folder.
+```sh
+$ gem install jekyll
+```
+
+#### 2. Install Gulp globally
+
+```sh
+$ npm install --global gulp
+```
+
+#### 3. Install project dependencies
+
+Navigate to the project folder, and run:
+
+```sh
+$ npm install
+```
+#### 4. Run Gulp
+
+```sh
+$ gulp
+```
 
 ## Development Roadmap
 
 * Fix navigation on mobile
-* General page typography
+* Navigation icon color
 * Minification
 * Syntax highlighting
 * Extensionless permalinks: http://jekyllrb.com/docs/permalinks/
